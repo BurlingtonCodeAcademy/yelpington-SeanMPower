@@ -7,53 +7,37 @@ let map = new mapboxgl.Map({
   center: [-73.2150, 44.4810], // starting position [lng, lat]
   zoom: 15, // starting zoom
 });
-let restoAddyArray = [];
 let restoNameArray = [];
-let navLinks = document.querySelectorAll("div.restoLink");
-console.log(navLinks);
+let restoCoords = [];
+let restaurantList = document.getElementById('restoList')
 
-for (i = 0; i < navLinks.length; i++) {
-    navLinks[i] = restoNameArray[i];
-}
+// Function Declarations ////////////////////////////////////
+function placeMarker(coords) {  // Place marker on map
+       let lngLatArr = [coords[1], coords[0]];
+       new mapboxgl.Marker().setLngLat(lngLatArr).addTo(map);
+    };
 
 
-function placeMarker(address) {
-  let urlAddress = encodeURI(address);
-
-  fetch(
-    `https://nominatim.openstreetmap.org/search?q=${urlAddress}&format=json`
-  )
-    .then((res) => res.json())
-    .then((json) => {
-      console.log(json);
-      let lngLatArr = [json[0].lon, json[0].lat];
-      new mapboxgl.Marker().setLngLat(lngLatArr).addTo(map);
-    });
-}
-
-async function restaurantsOnMap() {
+async function restaurantsOnMap() {  // Fetch API data and push relavent data to arrays for later use
     let restaurantList = await fetch('https://yelpingtonapi.herokuapp.com/api/restaurants')
     .then((res) => res.json())
     
     
     for (restaurant of restaurantList) {
-        restoAddyArray.push(restaurant.address)
         restoNameArray.push(restaurant.name)
+        restoCoords.push(restaurant.coords)
     }
-    restoAddyArray.forEach(restaurant => {
-        placeMarker(restaurant)
+    restoCoords.forEach(coords => {
+        placeMarker(coords) // Loop to place Lng/Lat markers on map
     })
-
-    console.log(restoAddyArray);
-    console.log(restoNameArray);
-    console.log(navLinks);
-
+    restoNameArray.forEach(restaurant => { // Loop to fill Nav Bar with restaurant name data
+      let node = document.createElement('LI')
+      let textNode = document.createTextNode(restaurant)
+      node.appendChild(textNode)
+      document.getElementById('restoList').appendChild(node);
+      })
 }
 
 
-
-// placeMarker("Sweetwaters, Burlington, VT, USA");
-// placeMarker("Hen of the Wood, Burlington, VT, USA");
-// placeMarker("Leunig's Bistro, Burlington, VT, USA");
-
+// Function Call ////////////////////////////////////////////
 restaurantsOnMap();

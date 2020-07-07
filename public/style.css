@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: lightgrey;
+    background-color: darkgreen;
 }
 
 container {
@@ -50,23 +50,16 @@ header {
 nav {
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
-    height: 83vh;
-    text-align: center;
-}
-nav h3 {
-    width: 100%;
+    width: 17%;
+    height: 82.5vh;
+    text-align: left;
 }
 
-.restoLink {
-    width: auto;
-    background-color: black;
-}
 
 #map {
     position: relative;
     bottom: 0;
     right: 0;
-    width: 82.5vw;
-    height: 83vh;
+    width: 81%;
+    height: 82.5vh;
 }
