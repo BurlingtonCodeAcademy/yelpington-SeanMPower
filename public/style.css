@@ -29,21 +29,21 @@ header {
     align-items: center;
     justify-content: space-around;
 }
-#header-title {
+.header-title {
     font-size: 80px;
     align-self: flex-start;
     justify-self: center;
 }
-#header-subtitle {
+.header-subtitle {
     font-size: 20px;
     align-self: flex-end;
     margin-bottom: 15px;
     justify-self: center;
 }
-#logo1 {
+.logo1 {
     justify-self: flex-start;
 }
-#logo2 {
+.logo2 {
     justify-self: flex-end;
 }
 
@@ -53,6 +53,10 @@ nav {
     width: 17%;
     height: 82.5vh;
     text-align: left;
+}
+
+.link {
+    color: white;
 }
 
 
