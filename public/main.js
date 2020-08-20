@@ -4,8 +4,8 @@ let myMap = (mapboxgl.accessToken =
 let map = new mapboxgl.Map({
   container: "map", // container id
   style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-  center: [-73.215, 44.481], // starting position [lng, lat]
-  zoom: 15, // starting zoom
+  center: [-73.215, 44.479], // starting position [lng, lat]
+  zoom: 14.7, // starting zoom
 });
 
 // Function Declarations ////////////////////////////////////
@@ -23,11 +23,11 @@ async function restaurantsOnMap() {
   console.log(restaurantList);
 
   for (restaurant of restaurantList) {
-    let node = document.createElement("LI");
     let textNode = document.createTextNode(restaurant.name);
     let a = document.createElement("a");
-    
-    placeMarker(restaurant.coords);
+    let node = document.createElement("LI");
+
+    placeMarker(restaurant.coords); // Marker placement
 
     a.appendChild(textNode);
     a.title = restaurant.name;

@@ -67,3 +67,18 @@ nav {
     width: 81%;
     height: 82.5vh;
 }
+
+#restaurant-map {
+    position: relative;
+    bottom: 0px;
+    right: 0;
+    width: 81%;
+    height: 82.5vh;
+}
+
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 81%;
+    height: 30vh;
+}

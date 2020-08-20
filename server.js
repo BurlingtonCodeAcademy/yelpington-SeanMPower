@@ -9,6 +9,10 @@ app.use(express.static(public))
 
 app.listen(port, () => console.log(`Example app listening on port: ${port}`))
 
+app.get('/restaurant', (req, res) => {
+    res.sendFile(public + '/restaurant.html')
+})
+
 app.get('/', (req, res) => {
     res.sendFile(public + '/index.html')
 })
