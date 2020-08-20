@@ -31,7 +31,7 @@ async function restaurantsOnMap() {
 
     a.appendChild(textNode);
     a.title = restaurant.name;
-    a.href = "/restaurant#" + restaurant.id;
+    a.href = "/restaurant#" + restaurant.id + "?" + restaurant.coords;
     node.appendChild(a);
     document.getElementById("restoList").appendChild(node);
   }
