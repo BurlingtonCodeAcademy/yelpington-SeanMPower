@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+<html>
 
-  <script src="main.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <title>Yelpington</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <container>
+    <header class="section">
+      <div class="logo1"><img src="\img\android-chrome-192x192.png" alt="Shamrock" width="120" height="120"></div>
+      <div class="header-title">Yelpington</div>
+      <div class="header-subtitle">Your guide to dining in Burlington</div>
+      <div class="logo2"><img src="\img\android-chrome-192x192.png" alt="Shamrock" width="120" height="120"></div>
+    </header>
+    <nav class="section">
+      <h3><u>Restaurant List</u></h3>
+      <ul id="restoList">
+      </ul>
+    </nav>
+    <div id="map" class="section"></div>
+    <script src="main.js" rel="text/javascript"></script>
+  </container>
 </body>
+
 </html>

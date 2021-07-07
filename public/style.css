@@ -1,0 +1,84 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: darkgreen;
+}
+
+container {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-family: fantasy;
+}
+
+.section {
+    border-radius: 20px;
+    margin: 5px;
+    background-color: green;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: 0px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+.header-title {
+    font-size: 80px;
+    align-self: flex-start;
+    justify-self: center;
+}
+.header-subtitle {
+    font-size: 20px;
+    align-self: flex-end;
+    margin-bottom: 15px;
+    justify-self: center;
+}
+.logo1 {
+    justify-self: flex-start;
+}
+.logo2 {
+    justify-self: flex-end;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 17%;
+    height: 82.5vh;
+    text-align: left;
+}
+
+.link {
+    color: white;
+}
+
+
+#map {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 81%;
+    height: 82.5vh;
+}
+
+#restaurant-map {
+    position: relative;
+    bottom: 0px;
+    right: 0;
+    width: 81%;
+    height: 82.5vh;
+}
+
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 81%;
+    height: 30vh;
+}
